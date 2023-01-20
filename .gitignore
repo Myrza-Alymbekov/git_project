@@ -1,0 +1,8 @@
+.idea/
+venv/
+app/db.sqlite3
+app/accounts/migrations
+app/items/migrations
+.DS_Store
+
+**/__pycache__/
