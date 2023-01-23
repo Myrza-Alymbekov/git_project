@@ -3,8 +3,11 @@ from app.items.models import Item
 
 
 class ItemSerializer(serializers.Serializer):
-    fields = '__all__'
+    name = serializers.CharField(max_length=20)
+    count = serializers.IntegerField()
 
-    class Meta:
-        model = Item
-        
+    def create(self, validated_data):
+        item = Item.objects.create(**validated_data)
+        return item
+
+
